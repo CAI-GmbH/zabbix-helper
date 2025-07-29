@@ -67,4 +67,4 @@ fi
 
 echo "📦 Backup gespeichert unter: $BACKUP_DIR"
 echo "🎉 Zabbix Agent 2 wurde erfolgreich auf Version 7 aktualisiert."
-echo "💋"
+echo "OK"
