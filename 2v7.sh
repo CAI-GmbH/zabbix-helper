@@ -22,12 +22,12 @@ sudo cp -a /etc/zabbix/* "$BACKUP_DIR" || echo "⚠️ Warnung: /etc/zabbix ist 
 
 # Remove existing Zabbix repo
 echo "🔍 Entferne alte Zabbix-Repository-Dateien (falls vorhanden)..."
-sudo rm -f /etc/apt/sources.list.d/zabbix.list
+sudo rm -f /etc/apt/sources.list.d/zabbix.*
 
 # Add Zabbix 7.0 repo
 echo "📦 Füge Zabbix 7.0 Repository hinzu..."
 
-wget -qO- https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_7.0-1+ubuntu${UBUNTU_VERSION}_all.deb -O /tmp/zabbix-release.deb
+wget -qO- https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu${UBUNTU_VERSION}_all.deb -O /tmp/zabbix-release.deb
 
 sudo dpkg --force-confnew -i /tmp/zabbix-release.deb 
 sudo apt update
