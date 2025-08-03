@@ -2,7 +2,7 @@
 
 set -e
 
-# Zabbix Agent2 Upgrade Script:  2v7 by bmn-b  
+# Zabbix Agent2 Upgrade Script:  2v7 by CAI-GmbH
 
 echo "🔧 Starte Upgrade von Zabbix Agent 2 auf v7..."
 
@@ -33,7 +33,7 @@ sudo dpkg --force-confnew -i /tmp/zabbix-release.deb
 sudo apt update
 
 # Upgrade Zabbix agent2
-echo "⬆️ Aktualisiere Zabbix Agent 2 auf Version 7 ..."
+echo "⬆️ Aktualisiere Zabbix Agent 2 auf Version 7..."
 
 sudo DEBIAN_FRONTEND=noninteractive apt install --only-upgrade zabbix-agent2 zabbix-agent2-plugin-* -y -o Dpkg::Options::="--force-confold"
 
@@ -50,7 +50,7 @@ if [[ "$INSTALLED_VERSION" =~ ^7\. ]]; then
     echo "✅ Zabbix Agent 2 Version $INSTALLED_VERSION erfolgreich installiert."
 else
     echo "❌ Falsche Version installiert: $INSTALLED_VERSION"
-    echo "🚨 Erwartet wurde Version 7.x – bitte prüfen Sie das Repository oder manuell nachinstallieren."
+    echo "🚨 Erwartet wurde Version 7.x - bitte prüfen Sie das Repository oder manuell nachinstallieren."
     exit 1
 fi
 echo "🔍 Überprüfe, ob der Zabbix Agent 2 Dienst läuft..."
@@ -67,4 +67,3 @@ fi
 
 echo "📦 Backup gespeichert unter: $BACKUP_DIR"
 echo "🎉 Zabbix Agent 2 wurde erfolgreich auf Version 7 aktualisiert."
-echo "OK"
